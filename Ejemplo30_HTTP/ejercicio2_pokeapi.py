@@ -68,3 +68,4 @@ etiqueta_info.pack()
 # Ejecutar el bucle de eventos de la ventana
 ventana.mainloop()
 
+

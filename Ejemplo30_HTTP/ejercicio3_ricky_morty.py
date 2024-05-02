@@ -20,6 +20,7 @@ def buscar_personaje():
         print("Error al hacer la solicitud")
 
 def mostrar_info_personaje(personaje):
+    
     nombre = personaje['name']
     especie = personaje['species']
     imagen_url = personaje['image']
@@ -27,7 +28,7 @@ def mostrar_info_personaje(personaje):
     imagen = Image.open(io.BytesIO(imagen_respuesta.content))
     imagen = imagen.resize((100, 100), resample=Image.BILINEAR)  # Corrección aquí
     imagen = ImageTk.PhotoImage(imagen)
-    
+
     etiqueta_nombre.config(text=f"Nombre: {nombre}")
     etiqueta_especie.config(text=f"Especie: {especie}")
     etiqueta_imagen.config(image=imagen)
@@ -35,7 +36,7 @@ def mostrar_info_personaje(personaje):
 
 # Crear la ventana principal
 ventana = tk.Tk()
-ventana.title("Búsqueda de Personajes de Rick and Morty")
+ventana.title("Personajes de Rick and Morty")
 ventana.geometry("600x400")  # Ajustar el tamaño de la ventana
 
 # Crear un Entry para ingresar el nombre del personaje
